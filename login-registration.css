@@ -1,0 +1,158 @@
+.aboreto-regular {
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+body {
+  margin: 0;
+  font-family: "Aboreto", system-ui;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #DFA8A3;
+}
+.background-container {
+  width: 90%;
+  height: 90%;
+  background-color: #E7BEBE;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.login-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('images/login.jpg') no-repeat center center/cover; 
+  border-radius: 15px;
+}
+.form-box {
+  width: 350px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.form-box h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  color: #5D2222;
+}
+label {
+  display: block;
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #5D2222;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: calc(100% - 10px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  border: 1px solid #DDD;
+  outline: none;
+  font-size: 1rem;
+}
+.options {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+.options label {
+  font-weight: normal;
+  color: #3B0404;
+}
+.options a {
+  margin-top: 4px;
+  text-decoration: none;
+  color: #3B0404;
+}
+.login-btn {
+  font-family: "Aboreto", system-ui;
+  width: 100%;
+  padding: 10px;
+  background-color: #B95C50;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+}
+::placeholder {
+  font-family: "Aboreto", system-ui;
+}
+.login-btn:hover {
+  background-color: #3B0404;
+}
+p {
+  font-size: 0.9rem;
+  color: #5D2222;
+}
+p a {
+  text-decoration: none;
+  color: #7e3a3a;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .form-box {
+    width: 300px;
+    padding: 20px;
+  }
+  .form-box h1 {
+    font-size: 1.8rem; 
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.9rem; 
+    padding: 8px; 
+  }
+  .login-btn {
+    font-size: 0.9rem;
+    padding: 8px; 
+  }
+  .options {
+    font-size: 0.8rem;
+  }
+  .background-container {
+    height: 95%;
+  }
+}
+@media (max-width: 480px) {
+  .form-box {
+    width: 250px; 
+    padding: 15px; 
+  }
+  .form-box h1 {
+    font-size: 1.6rem; 
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    font-size: 0.8rem; 
+    padding: 7px; 
+  }
+  .login-btn {
+    font-size: 0.8rem; 
+    padding: 7px; 
+  }
+  .options {
+    font-size: 0.75rem; 
+  }
+  .background-container {
+    height: 100%; 
+    width: 100%;
+    padding: 10%;
+  }
+}

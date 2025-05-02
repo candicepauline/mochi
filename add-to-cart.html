@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add to Cart Page</title>
+  <link rel="stylesheet" href="add-to-cart_styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+  <div class="shop-container">
+    <div class="header">
+      <div class="shop-title">SHOP</div>
+      <div class="header-icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-clipboard-list"></i>
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="products-carousel">
+      <button class="carousel-arrow left-arrow">⬅</button>
+      <div class="product-cards">
+        <div class="product-card" draggable="true" data-product-name="CABINET" data-product-price="1100" data-product-image="images/cabinet.jpg">
+          <div class="product-image-container">
+            <img src="images/cabinet.jpg" alt="Cabinet" class="product-image" />
+          </div>
+          <div class="product-name">CABINET</div>
+        </div>
+        <div class="product-card" draggable="true" data-product-name="EGG CHAIR" data-product-price="1500" data-product-image="images/chair.jpg">
+          <div class="product-image-container">
+            <img src="images/chair.jpg" alt="Egg Chair" class="product-image" />
+          </div>
+          <div class="product-name">EGG CHAIR</div>
+        </div>
+        <div class="product-card" draggable="true" data-product-name="LAMP SHADE" data-product-price="900" data-product-image="images/lamp.jpg">
+          <div class="product-image-container">
+            <img src="images/lamp.jpg" alt="Lamp Shade" class="product-image" />
+          </div>
+          <div class="product-name">LAMP SHADE</div>
+        </div>
+      </div>
+      <button class="carousel-arrow right-arrow">➡</button>
+    </div>
+    <div class="divider"></div>
+    <div class="cart-section">
+      <div class="cart-title">SHOPPING CART</div>
+    </div>
+
+    <div class="add-item-container center-container">
+      <button class="add-item-button" onclick="showProductSelectionModal()">ADD ITEM +</button>
+    </div>
+
+    <div class="drag-item-container" id="dragItemContainer" class="center-container">
+      <div class="drag-item-text">DRAG ITEM</div>
+    </div>
+
+    <button class="checkout-button">CHECKOUT</button>
+  </div>
+
+  <div id="productSelectionModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Select Product</h2>
+      <div id="productImages" class="product-images"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
