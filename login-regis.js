@@ -1,21 +1,28 @@
 const getUsers = () => JSON.parse(localStorage.getItem('users')) || [];
-const showError = (message) => alert(message);
+
+const showError = (msg) => alert(msg);
 
 const handleLogin = () => {
   const form = document.getElementById('loginForm');
-  const rememberMe = document.getElementById('rememberMe');
+  if (!form) return;
+
   const emailInput = document.getElementById('loginEmail');
+  const passwordInput = document.getElementById('loginPassword');
+  const rememberMe = document.getElementById('rememberMe');
 
   const rememberedEmail = localStorage.getItem('rememberedEmail');
-  if (rememberedEmail) {
+  if (rememberedEmail && emailInput) {
     emailInput.value = rememberedEmail;
-    rememberMe.checked = true;
+    if (rememberMe) {
+        rememberMe.checked = true;
+    }
   }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const email = emailInput.value.trim();
-    const password = document.getElementById('loginPassword').value.trim();
+    const password = passwordInput.value.trim();
 
     if (!email || !password) {
       showError('Please fill in all fields');
@@ -23,25 +30,28 @@ const handleLogin = () => {
     }
 
     const users = getUsers();
-    const validUser = users.find(user => 
-      user.email === email && user.password === password
-    );
+    const foundUser = users.find(user => user.email === email);
 
-    if (validUser) {
-      rememberMe.checked ?
-        localStorage.setItem('rememberedEmail', email) :
+    if (foundUser && foundUser.password === password) {
+      if (rememberMe && rememberMe.checked) {
+        localStorage.setItem('rememberedEmail', email);
+      } else {
         localStorage.removeItem('rememberedEmail');
+      }
 
+      alert('Login successful. Redirecting...');
       window.location.href = 'homepage.html';
+
     } else {
-      showError('Invalid email or password');
+      showError('Invalid email or password.');
     }
   });
 };
 
 const handleRegistration = () => {
   const form = document.getElementById('registrationForm');
-  
+  if (!form) return;
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const fullname = document.getElementById('regFullname').value.trim();
@@ -54,6 +64,7 @@ const handleRegistration = () => {
     }
 
     const users = getUsers();
+
     if (users.some(user => user.email === email)) {
       showError('Email already registered!');
       return;
@@ -61,11 +72,17 @@ const handleRegistration = () => {
 
     users.push({ fullname, email, password });
     localStorage.setItem('users', JSON.stringify(users));
-    window.location.href = 'homepage.html';
+
+    alert('Account created successfully! You can now login.');
+    window.location.href = 'login.html';
   });
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('loginForm')) handleLogin();
-  if (document.getElementById('registrationForm')) handleRegistration();
+  if (document.getElementById('loginForm')) {
+    handleLogin();
+  }
+  if (document.getElementById('registrationForm')) {
+    handleRegistration();
+  }
 });

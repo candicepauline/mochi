@@ -5,21 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Add to Cart Page</title>
   <link rel="stylesheet" href="add-to-cart_styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Aboreto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 <body>
   <div class="shop-container">
     <div class="header">
-      <div class="shop-title">SHOP</div>
+      <div class="shop-title-with-arrow">
+        <a href="homepage.html" class="back-arrow"><i class="fa-solid fa-arrow-left"></i></a>
+        <div class="shop-title">SHOP</div>
+      </div>
       <div class="header-icons">
         <i class="fa-solid fa-magnifying-glass"></i>
         <i class="fa-solid fa-cart-shopping"></i>
-        <i class="fa-solid fa-clipboard-list"></i>
+        <a href="logout.html">
+        <i class="fa-solid fa-right-from-bracket"></i>
+        </a>
         <i class="fa-solid fa-user"></i>
         <i class="fa-solid fa-bars"></i>
       </div>
     </div>
+
     <div class="products-carousel">
       <button class="carousel-arrow left-arrow">⬅</button>
       <div class="product-cards">
@@ -44,6 +52,7 @@
       </div>
       <button class="carousel-arrow right-arrow">➡</button>
     </div>
+
     <div class="divider"></div>
     <div class="cart-section">
       <div class="cart-title">SHOPPING CART</div>

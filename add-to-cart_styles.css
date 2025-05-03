@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
+
 }
 body {
   background-color: #f0d9d0;
@@ -53,12 +53,24 @@ body {
   margin-right: 30px;
   font-size: 20px;
   color: #3b0404;
+  cursor: pointer;
 }
 .icon {
   color: #3b0404;
   font-size: 20px;
   cursor: pointer;
 }
+
+.header-icons a:visited {
+  color: #3b0404; 
+  text-decoration: none; 
+}
+
+.header-icons a:visited i,
+.header-icons a:visited .icon { 
+  color: #3b0404; 
+}
+
 .products-carousel {
   display: flex;
   justify-content: center;
@@ -126,7 +138,6 @@ body {
   background-color: #3b0404;
   margin: 20px 30px;
 }
-
 .cart-section {
   display: flex;
   flex-direction: column;
@@ -146,6 +157,7 @@ body {
   justify-items: center;
 }
 .add-item-button {
+  font-family: "Aboreto", system-ui;
   width: auto;
   padding: 8px 15px;
   background-color: #f0d9d0;
@@ -167,7 +179,7 @@ body {
   width: 80%;
   height: 100%;
   margin: 20px auto;
-  text-align: center; 
+  text-align: center;
 }
 .drag-item-text {
   margin: 20px auto;
@@ -236,6 +248,7 @@ body {
   margin: 0 auto;
 }
 .checkout-button {
+  font-family: "Aboreto", system-ui;
   position: absolute;
   bottom: 20px;
   right: 20px;
@@ -296,4 +309,21 @@ body {
   cursor: pointer;
   border: 1px solid #ccc;
   border-radius: 15px;
+}
+.shop-title-with-arrow {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 10px;
+  gap: 12px;
+}
+.back-arrow {
+  color: #3b0404;
+  font-size: 22px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+.back-arrow:hover {
+  color: #7a2e2e;
 }

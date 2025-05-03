@@ -1,0 +1,156 @@
+.aboreto-regular {
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Aboreto", system-ui;
+    background-color: #F0D9D0;
+    color: #3B0404;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.screen-container {
+    width: 90%;
+    height: 90%;
+    max-width: 1500px;
+    max-height: 1500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-panel {
+    background-color: #BA8D80;
+    border-radius: 30px;
+    padding: 30px 40px;
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.back-arrow a {
+    color: #3B0404;
+    text-decoration: none;
+    font-size: 1.6rem;
+    transition: opacity 0.3s ease;
+}
+
+.back-arrow a:hover {
+    opacity: 0.8;
+}
+
+.icons {
+    display: flex;
+    gap: 25px;
+}
+
+.icons i {
+    font-size: 1.6rem;
+    color: #3B0404;
+    cursor: pointer;
+}
+
+.panel-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-box {
+    background-color: #DFA8A3;
+    border-radius: 20px;
+    padding: 50px 60px;
+    text-align: center;
+    width: 80%;
+    max-width: 550px;
+}
+
+.logout-box h1 {
+    font-size: 1.7rem;
+    font-weight: normal;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.logout-box p {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.logout-button {
+    background-color: #F0D9D0; 
+    color: #3B0404;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 70px;
+    font-size: 0.9rem;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: "Aboreto", system-ui;
+}
+
+.logout-button:hover {
+    background-color: #B95C50; 
+}
+
+@media (max-width: 600px) {
+    .main-panel {
+        padding: 20px;
+        min-height: 50vh;
+    }
+
+    .back-arrow a,
+    .icons i {
+        font-size: 1.4rem;
+    }
+
+    .icons {
+        gap: 20px;
+    }
+
+    .logout-box {
+        padding: 30px 25px;
+        width: 95%;
+    }
+
+    .logout-box h1 {
+        font-size: 1.4rem;
+    }
+
+    .logout-box p {
+        font-size: 0.8rem;
+    }
+
+    .logout-button {
+        padding: 12px 50px;
+    }
+}
